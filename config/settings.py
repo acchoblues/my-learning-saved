@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
 
-    # Task queue Celery
-    'celery_app',
+    # Application
+    'celery_app',  # Task queue Celery
+    'unit_test', # Unit Testing
 ]
 
 MIDDLEWARE = [
