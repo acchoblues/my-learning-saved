@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Django suit admin
     'suit',
+    'djcelery_email',
 
     # Django setting from django
     'django.contrib.admin',
@@ -47,6 +48,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
+
+    # Task queue Celery
+    'celery_app',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +139,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
